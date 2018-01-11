@@ -1,16 +1,14 @@
 $(function() {
   //variables for url
   var imgUrl = 'https://picsum.photos/list';
-
-
   /* Insert images to DOM  */
   function insertContent(images) {
     $.each(images, function(indexImg, img) {
     if (indexImg <3) {
     	$.ajax({
-    		url: img.post_url,
-    		type: 'GET',
-    		success: function(data) {
+    	url: img.post_url,
+    	type: 'GET',
+    	success: function(data) {
         var html = $.parseHTML( data ), 
             img = $(html).find("img:eq( 1 )" ),
             len = img.length; 
@@ -21,14 +19,13 @@ $(function() {
             }
             console.log(src);
             var img = $('<img id="img">');
-						img.appendTo('.img');
-   					img.attr("src", src);
-    		}
-		 });	
+	    img.appendTo('.img');
+   	    img.attr("src", src);
+    	}
+     });	
     }  
    });
   }
-
   /* Load images and insert them into the DOM
   */
   function loadImages() {
@@ -41,7 +38,5 @@ $(function() {
            //console.log(error)
        })
   }
-
   loadImages();
-
 });
