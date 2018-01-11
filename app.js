@@ -13,7 +13,7 @@ $(function() {
             img = $(html).find("img:eq( 1 )" ),
             len = img.length; 
             if( len > 0 ){
-                var src = img.attr("src"); // get id of first image
+                var src = img.attr("src");
             } else {
                 console.log("Image not found");
             }
