@@ -30,7 +30,7 @@ $(function() {
   */
   function loadImages() {
         $.ajax({
-          	url: imgUrl
+          	url: imgUrl;
         }).done(function(response){
      		    insertContent(response)
             //console.log(response);
